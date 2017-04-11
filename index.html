@@ -1,0 +1,30 @@
+<div id="player">
+  <audio src="https://s3.amazonaws.com/scratchmusicgroup/mix-hour.mp3" controls></audio>
+  <div id="mask"></div>
+</div>
+
+<style media="screen">
+#player {
+  position: relative;
+  width: 300px;
+}
+#mask {
+  display: none;
+  background-color: #F3F5F6; /* match the background color of the page */
+  position: absolute;
+  width: 34px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10
+}
+</style>
+
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function(event) {
+  var match = navigator.userAgent.match(/Chrome\/(\d+)/);
+  if (match && parseInt(match[1]) >= 55) {
+    document.getElementById('mask').style.display = 'block';
+  }
+});
+</script>
